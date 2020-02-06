@@ -6,7 +6,7 @@ body {
     color: #085C51;
 }
 
-main{
+main {
     max-width: 100000px;
     margin: 20px;
 }
@@ -16,7 +16,7 @@ main{
     grid-template-columns: 1fr;
 }
 
-nav{
+nav {
     background: #085C51;
     padding: 14px 16px;
 }
@@ -33,11 +33,11 @@ nav a:hover {
     background: grey;
 }
 
-h1{
+h1 {
     text-align: center;
 }
 
-#starters{
+#starters {
     border: 1px solid;
     border-color: #085C51;
     padding: 10px;
@@ -45,7 +45,7 @@ h1{
     margin-bottom: 20px;
 }
 
-#starters > header{
+#starters > header {
     position: relative;
     display: flex;
     flex-direction: row;
@@ -53,18 +53,16 @@ h1{
     padding: 0;
 }
 
-#maincourse{
+#maincourse {
     border: 1px solid #085C51;
     padding: 10px;
     text-align: center;
     margin-bottom: 20px;
 }
 
-#desserts{
+#desserts {
     border: 1px solid #085C51;
     padding: 10px;
     text-align: center;
     margin-bottom: 20px;
 }
-
-
