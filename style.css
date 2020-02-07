@@ -13,12 +13,15 @@ main {
 
 #wrapper {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
 }
 
 nav {
     background: #085C51;
     padding: 14px 16px;
+    display: flex;
+    text-align: center;
 }
 
 nav a {
@@ -30,11 +33,18 @@ nav a {
 }
 
 nav a:hover {
-    background: grey;
+    background: #A9B7B3;
 }
 
 h1 {
     text-align: center;
+    margin: 50px;
+    border-bottom: 1px solid #085C51;
+    font-size: 50px;
+}
+
+img{
+    max-width: 80%
 }
 
 #starters {
@@ -42,7 +52,7 @@ h1 {
     border-color: #085C51;
     padding: 10px;
     text-align: center;
-    margin-bottom: 20px;
+    margin: 10px;
 }
 
 #starters > header {
@@ -57,12 +67,17 @@ h1 {
     border: 1px solid #085C51;
     padding: 10px;
     text-align: center;
-    margin-bottom: 20px;
+    margin: 10px;
+
 }
 
 #desserts {
     border: 1px solid #085C51;
     padding: 10px;
     text-align: center;
-    margin-bottom: 20px;
+    margin: 10px;
+}
+
+.price-full{
+    font-size: 30px;
 }
