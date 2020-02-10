@@ -4,13 +4,27 @@ fetch("https://kea-alt-del.dk/t5/api/productlist")
 })
 
 .then(function (data){
-    showData(data)
+    const superheroes = data
+    data.forEach(showDish)
 })
 
-function showData(jsonData){
-    console.log(jsonData)
+function showDish(course){
+    console.log(course)
+    const template = document.querySelector("template").content;
+    const clone = template.cloneNode(true);
+
+    clone.querySelector("h3").textContent = course.name;
+
+    clone.querySelector(".price-full span").textContent = course.price;
+
+    clone.querySelector(".info").textContent = course.shortdescription;
+
+    const parent = document.querySelector("#starters");
+    parent.appendChild(clone);
 }
 
-//1 make a template
 
-//2 loop through json data
+
+
+
+
