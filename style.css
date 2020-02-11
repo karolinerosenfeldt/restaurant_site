@@ -85,3 +85,8 @@ img{
 .info{
     margin-top: 10px;
 }
+
+.price-discount{
+    text-decoration: line-through;
+    font-size: 25px;
+}
