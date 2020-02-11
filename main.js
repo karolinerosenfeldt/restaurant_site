@@ -5,7 +5,13 @@ fetch("https://kea-alt-del.dk/t5/api/categories")
 function createCategories(data){
     console.log(data)
     data.forEach(function(oneCat){
+        //create links
+        const link = document.createElement("a");
+        link.setAttribute("href", `#${oneCat}`)
+        link.textContent = oneCat;
+        document.querySelector("nav").appendChild(link);
 
+        //create sections
         const section = document.createElement("section");
         section.id = oneCat;
         const h2 = document.createElement("h2");
@@ -53,8 +59,21 @@ function showDish(course) {
         clone.querySelector(".price-full span").textContent = course.price
     }
 
+    const imageName = course.image;
+
+    const base = "https://kea-alt-del.dk/t5/site/imgs/";
+
+    const smallImg = base + "small/" + imageName + "-sm.jpg";
+
+    const mediumImg = base + "medium/" + imageName + "-md.jpg";
+
+    const largeImg = base + "large/" + imageName + ".jpg";
+
+    clone.querySelector("img").src = smallImg;
+
     console.log(`#${course.category}`)
     document.querySelector(`#${course.category}`).appendChild(clone);
+
 
     /*const parent = document.querySelector("#starter");
     parent.appendChild(clone);*/
