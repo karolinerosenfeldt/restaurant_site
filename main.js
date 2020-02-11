@@ -50,7 +50,7 @@ function showDish(course) {
     clone.querySelector(".price-discount span").textContent = course.discount;
 
     if (course.discount) {
-        clone.querySelector(".price-discount").textContent = course.price;
+        clone.querySelector(".price-discount span").textContent = course.price;
         const newPrice = Math.round(course.price - course.price * course.discount / 100);
 
         clone.querySelector(".price-full span").textContent = newPrice;
