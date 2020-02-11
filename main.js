@@ -19,6 +19,18 @@ function showDish(course){
 
     clone.querySelector(".info").textContent = course.shortdescription;
 
+    clone.querySelector(".price-discount").textContent = course.discount;
+
+    if (course.discount){
+        clone.querySelector(".price-discount").textContent = course.price;
+        const newPrice = Math.round(course.price - course.price * course.discount / 100);
+
+        clone.querySelector(".price-full span").textContent = newPrice;
+    } else{
+        clone.querySelector(".price-discount").remove()
+        clone.querySelector(".price-full span").textContent = course.price
+    }
+
     const parent = document.querySelector("#starters");
     parent.appendChild(clone);
 }
