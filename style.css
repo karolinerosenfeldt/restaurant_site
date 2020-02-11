@@ -13,7 +13,7 @@ main {
 
 #wrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 
 }
 
@@ -43,11 +43,11 @@ h1 {
     font-size: 50px;
 }
 
-img{
+img {
     max-width: 80%
 }
 
-#starters {
+#starter {
     border: 1px solid;
     border-color: #085C51;
     padding: 10px;
@@ -55,7 +55,7 @@ img{
     margin: 10px;
 }
 
-#starters > header {
+#starter > header {
     position: relative;
     display: flex;
     flex-direction: row;
@@ -63,7 +63,7 @@ img{
     padding: 0;
 }
 
-#maincourse {
+#main {
     border: 1px solid #085C51;
     padding: 10px;
     text-align: center;
@@ -71,22 +71,36 @@ img{
 
 }
 
-#desserts {
+#dessert {
     border: 1px solid #085C51;
     padding: 10px;
     text-align: center;
     margin: 10px;
 }
 
-.price-full{
+#drinks{
+    border: 1px solid #085C51;
+    padding: 10px;
+    text-align: center;
+    margin: 10px;
+}
+
+#sideorders{
+    border: 1px solid #085C51;
+    padding: 10px;
+    text-align: center;
+    margin: 10px;
+}
+
+.price-full {
     font-size: 30px;
 }
 
-.info{
+.info {
     margin-top: 10px;
 }
 
-.price-discount{
+.price-discount {
     text-decoration: line-through;
     font-size: 25px;
 }
