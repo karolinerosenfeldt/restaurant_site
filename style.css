@@ -11,10 +11,13 @@ main {
     margin: 20px;
 }
 
-#wrapper {
+section {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr))
+}
 
+section>h2{
+    grid-column: 1/-1;
 }
 
 nav {
@@ -22,6 +25,7 @@ nav {
     padding: 14px 16px;
     display: flex;
     text-align: center;
+    text-transform: capitalize;
 }
 
 nav a {
@@ -43,16 +47,13 @@ h1 {
     font-size: 50px;
 }
 
-img {
-    max-width: 80%
-}
-
 #starter {
-    border: 1px solid;
+    border-bottom: 1px solid;
     border-color: #085C51;
     padding: 10px;
     text-align: center;
     margin: 10px;
+    text-transform: capitalize;
 }
 
 #starter > header {
@@ -64,32 +65,36 @@ img {
 }
 
 #main {
-    border: 1px solid #085C51;
+    border-bottom: 1px solid #085C51;
     padding: 10px;
     text-align: center;
     margin: 10px;
+    text-transform: capitalize;
 
 }
 
 #dessert {
-    border: 1px solid #085C51;
+    border-bottom: 1px solid #085C51;
     padding: 10px;
     text-align: center;
     margin: 10px;
+    text-transform: capitalize;
 }
 
 #drinks{
-    border: 1px solid #085C51;
+    border-bottom: 1px solid #085C51;
     padding: 10px;
     text-align: center;
     margin: 10px;
+    text-transform: capitalize;
 }
 
 #sideorders{
-    border: 1px solid #085C51;
+    border-bottom: 1px solid #085C51;
     padding: 10px;
     text-align: center;
     margin: 10px;
+    text-transform: capitalize;
 }
 
 .price-full {
@@ -104,3 +109,12 @@ img {
     text-decoration: line-through;
     font-size: 25px;
 }
+
+button{
+    height: 40px;
+    width: 300px;
+    background-color: #085C51;
+    color: white;
+    font-family: Anton, sans-serif;
+}
+
