@@ -1,10 +1,15 @@
+const modal = document.querySelector(".modal-background");
+modal.addEventListener("click", () => {
+    modal.classList.add("hide");
+});
+
 fetch("https://kea-alt-del.dk/t5/api/categories")
-    .then(res=>res.json())
+    .then(res => res.json())
     .then(createCategories)
 
-function createCategories(data){
+function createCategories(data) {
     console.log(data)
-    data.forEach(function(oneCat){
+    data.forEach(function (oneCat) {
         //create links
         const link = document.createElement("a");
         link.setAttribute("href", `#${oneCat}`)
@@ -24,16 +29,16 @@ function createCategories(data){
 }
 
 
-function getProducts(){
-fetch("https://kea-alt-del.dk/t5/api/productlist")
-    .then(function (response) {
-        return response.json()
-    })
+function getProducts() {
+    fetch("https://kea-alt-del.dk/t5/api/productlist")
+        .then(function (response) {
+            return response.json()
+        })
 
-    .then(function (data) {
-        const superheroes = data
-        data.forEach(showDish)
-    })
+        .then(function (data) {
+            const superheroes = data
+            data.forEach(showDish)
+        })
 }
 
 function showDish(course) {
@@ -59,22 +64,22 @@ function showDish(course) {
         clone.querySelector(".price-full span").textContent = course.price
     }
 
-    const imageName = course.image;
+const imageName = course.image;
 
-    const base = "https://kea-alt-del.dk/t5/site/imgs/";
+const base = "https://kea-alt-del.dk/t5/site/imgs/";
 
-    const smallImg = base + "small/" + imageName + "-sm.jpg";
+const smallImg = base + "small/" + imageName + "-sm.jpg";
 
-    const mediumImg = base + "medium/" + imageName + "-md.jpg";
+const mediumImg = base + "medium/" + imageName + "-md.jpg";
 
-    const largeImg = base + "large/" + imageName + ".jpg";
+const largeImg = base + "large/" + imageName + ".jpg";
 
-    clone.querySelector("img").src = smallImg;
+clone.querySelector("img").src = smallImg;
 
-    console.log(`#${course.category}`)
-    document.querySelector(`#${course.category}`).appendChild(clone);
+console.log(`#${course.category}`)
+document.querySelector(`#${course.category}`).appendChild(clone);
 
 
-    /*const parent = document.querySelector("#starter");
-    parent.appendChild(clone);*/
+/*const parent = document.querySelector("#starter");
+parent.appendChild(clone);*/
 }
