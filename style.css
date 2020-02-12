@@ -117,12 +117,22 @@ h1 {
     font-size: 25px;
 }
 
-button{
+.course .price-discount{
+    right: initial;
+    left: -4px;
+}
+
+.course button{
     height: 40px;
     width: 300px;
     background-color: #085C51;
     color: white;
     margin-top: auto;
+    justify-content: center;
+}
+
+.course button:hover{
+    cursor: pointer;
 }
 
 img{
@@ -130,3 +140,23 @@ img{
     height: auto;
 }
 
+.hide {
+  display: none;
+}
+
+.modal-background {
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  border: 1px solid #7c1f17;
+  margin: 1em;
+  padding: 2em;
+}
