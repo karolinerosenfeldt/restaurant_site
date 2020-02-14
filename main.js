@@ -41,6 +41,11 @@ function getProducts() {
         })
 }
 
+function showData(jsonData) {
+    console.log(jsonData)
+    jsonData.forEach(showDish)
+}
+
 function showDish(course) {
     console.log(course)
     const template = document.querySelector("template").content;
@@ -54,6 +59,8 @@ function showDish(course) {
 
     clone.querySelector(".price-discount span").textContent = course.discount;
 
+    clone.querySelector("soldoutImg").src = course.soldout;
+
     if (course.discount) {
         clone.querySelector(".price-discount span").textContent = course.price;
         const newPrice = Math.round(course.price - course.price * course.discount / 100);
@@ -64,22 +71,38 @@ function showDish(course) {
         clone.querySelector(".price-full span").textContent = course.price
     }
 
-const imageName = course.image;
-
-const base = "https://kea-alt-del.dk/t5/site/imgs/";
-
-const smallImg = base + "small/" + imageName + "-sm.jpg";
-
-const mediumImg = base + "medium/" + imageName + "-md.jpg";
-
-const largeImg = base + "large/" + imageName + ".jpg";
-
-clone.querySelector("img").src = smallImg;
-
-console.log(`#${course.category}`)
-document.querySelector(`#${course.category}`).appendChild(clone);
+    clone.querySelector("button").addEventListener("click", () => {
+        fetch(`https://kea-alt-del.dk/t5/api/product?id=${course.id}`)
+            .then(res => res.json())
+            .then(showDetails);
+    });
 
 
-/*const parent = document.querySelector("#starter");
-parent.appendChild(clone);*/
+    function showDetails(data) {
+        console.log(data)
+        modal.querySelector(".modal-name").textContent = data.name;
+        modal.querySelector(".modal-description").textContent = data.longdescription;
+        modal.querySelector(".modal-price span").textContent = data.price;
+
+        modal.classList.remove("hide")
+
+    }
+
+    const imageName = course.image;
+
+    const base = "https://kea-alt-del.dk/t5/site/imgs/";
+
+    const smallImg = base + "small/" + imageName + "-sm.jpg";
+
+    const mediumImg = base + "medium/" + imageName + "-md.jpg";
+
+    const largeImg = base + "large/" + imageName + ".jpg";
+
+    clone.querySelector("img").src = smallImg;
+
+    /*const parent = document.querySelector("#starter");
+    parent.appendChild(clone);*/
+
+    console.log(`#${course.category}`)
+    document.querySelector(`#${course.category}`).appendChild(clone);
 }
