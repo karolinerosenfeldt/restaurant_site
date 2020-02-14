@@ -59,7 +59,9 @@ function showDish(course) {
 
     clone.querySelector(".price-discount span").textContent = course.discount;
 
-    clone.querySelector("soldoutImg").src = course.soldout;
+    if (!course.soldout) {
+        clone.querySelector(".soldOutImg").remove();
+    }
 
     if (course.discount) {
         clone.querySelector(".price-discount span").textContent = course.price;
