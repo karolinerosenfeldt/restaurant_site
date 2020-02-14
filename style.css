@@ -20,6 +20,12 @@ section > h2 {
     grid-column: 1/-1;
 }
 
+article.course {
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+}
+
 nav {
     background: #085C51;
     padding: 14px 16px;
@@ -50,12 +56,10 @@ h1 {
 }
 
 #starter {
-    border-bottom: 1px solid;
-    border-color: #085C51;
-    padding: 50px;
     text-align: center;
-    margin: 10px;
     text-transform: capitalize;
+    border-bottom: 1px solid #085C51;
+    padding-bottom: 50px;
 
 }
 
@@ -68,40 +72,35 @@ h1 {
 }
 
 #main {
-    border-bottom: 1px solid #085C51;
-    padding: 50px;
     text-align: center;
-    margin: 10px;
     text-transform: capitalize;
-
+    margin-top: 30px;
+    border-bottom: 1px solid #085C51;
+    padding-bottom: 50px;
 }
 
 #dessert {
-    border-bottom: 1px solid #085C51;
-    padding: 50px;
     text-align: center;
-    margin: 10px;
     text-transform: capitalize;
+    border-bottom: 1px solid #085C51;
+    padding-bottom: 50px;
 }
 
 #drinks {
-    border-bottom: 1px solid #085C51;
-    padding: 50px;
     text-align: center;
-    margin: 10px;
     text-transform: capitalize;
+    border-bottom: 1px solid #085C51;
+    padding-bottom: 50px;
 }
 
 #sideorders {
-    border-bottom: 1px solid #085C51;
-    padding: 50px;
     text-align: center;
-    margin: 10px;
     text-transform: capitalize;
+    padding-bottom: 50px;
 }
 
 .course {
-    margin-top: 20px;
+    margin-top: 50px;
 }
 
 .price-full {
@@ -115,6 +114,7 @@ h1 {
 .price-discount {
     text-decoration: line-through;
     font-size: 25px;
+    opacity: 0.5;
 }
 
 .course button {
@@ -122,15 +122,29 @@ h1 {
     width: 300px;
     background-color: #085C51;
     color: white;
+    margin-top: auto;
+    margin-left: 85px;
+    text-align: center;
+    transition: all 0.4s;
+}
+
+.course button:before {
+    transform: scaleX(0);
+    transition: all 0.5s;
+    transform-origin: top left;
 }
 
 .course button:hover {
     cursor: pointer;
+    transform: scale(1.1);
 }
+
 
 img {
     width: 80%;
     height: auto;
+    justify-content: center;
+    margin-left: 50px;
 }
 
 .hide {
@@ -152,4 +166,36 @@ img {
     border: 1px solid #7c1f17;
     margin: 1em;
     padding: 2em;
+}
+
+.soldOutImg {
+    position: absolute;
+    width: max(300px);
+    padding-top: 140px;
+    padding-right: 70px;
+    z-index: 1;
+    align-self: center;
+}
+
+.veggieImg {
+    position: absolute;
+    width: max(80px);
+    padding-top: 40px;
+}
+
+footer {
+    background: #085C51;
+    color: white;
+}
+
+footer h3 {
+    padding: 20px;
+    text-decoration: underline;
+    text-align: center;
+}
+
+footer li {
+    list-style-type: none;
+    padding: 20px;
+    text-align: center;
 }
