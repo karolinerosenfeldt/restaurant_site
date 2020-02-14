@@ -63,6 +63,10 @@ function showDish(course) {
         clone.querySelector(".soldOutImg").remove();
     }
 
+    if (!course.vegetarian){
+        clone.querySelector(".veggieImg").remove();
+    }
+
     if (course.discount) {
         clone.querySelector(".price-discount span").textContent = course.price;
         const newPrice = Math.round(course.price - course.price * course.discount / 100);
