@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My restaurant</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -16,7 +17,7 @@
     </header>
 
     <main>
-        <h1>MY RESTAURANT</h1>
+        <h1>RESTAURANT PETROGRAD</h1>
         <div id="wrapper">
 
             <template id="myTemplate">
@@ -32,23 +33,26 @@
                     <p class="price price-discount">
                         <span></span>,-</p>
 
+                    <p class="soldoutImg">
+                        <img src="sold.png">
+                    </p>
+
                     <button>READ MORE</button>
 
                 </article>
             </template>
         </div>
+        <div class="modal-background hide">
+            <div class="modal-content">
+                <h3 class="modal-name">NAME</h3>
+                <img src="" alt="" class="modal-image" />
+                <p class="modal-description">LONG DESCRIPTION</p>
+                <h4 class="modal-price"><span></span>,-</h4>
+            </div>
+        </div>
     </main>
 
-    <div class="modal-background hide">
-        <div class="modal-content">
-            <h3 class="modal-name">NAME</h3>
-            <img src="" alt="" class="modal-image" />
-            <p class="modal-description">LONG DESCRIPTION</p>
-            <h4 class="modal-price">PRICE</h4>
-        </div>
-    </div>
-
-        <script src="main.js"></script>
+    <script src="main.js"></script>
 </body>
 
 </html>
